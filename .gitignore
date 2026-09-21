@@ -1,0 +1,19 @@
+# Virtual Environment
+.venv/
+venv/
+
+# MongoDB project
+node_modules/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Environment file (we'll use this later)
+.env
+
+# Optional: old SQLite file
+db.sqlite3
