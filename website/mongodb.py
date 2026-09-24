@@ -1,10 +1,18 @@
+import os
+from dotenv import load_dotenv
 from pymongo import MongoClient
 
-# Connect to local MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+# Load .env file
+load_dotenv()
 
-# Portfolio database
-db = client["portfolio_db"]
+# Read values from .env
+MONGODB_URI = os.getenv("MONGODB_URI")
+DATABASE_NAME = os.getenv("MONGODB_DATABASE")
+
+# Connect to MongoDB
+client = MongoClient(MONGODB_URI)
+
+db = client[DATABASE_NAME]
 
 # Collections
 profile = db["profile"]
