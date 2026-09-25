@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tushar | Portfolio</title>
 
-    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    <link rel="stylesheet" href="/static/css/output.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <!-- <script src="{% static 'js/script.js' %}" defer></script> -->
 
@@ -1215,9 +1215,9 @@
       }
       
       /* =====================================================================
-               RESPONSIVE  (kept at the END of the file so these rules actually
-               override the base rules above)
-               ===================================================================== */
+                     RESPONSIVE  (kept at the END of the file so these rules actually
+                     override the base rules above)
+                     ===================================================================== */
       
       /* ---------- Small laptops / tablets landscape ---------- */
       @media (max-width: 1180px) {
@@ -1513,7 +1513,7 @@
 
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">Explore Work →</a>
-            <a href="{% static 'files/Tushar_Resume.pdf' %}" download class="btn btn-outline">Download Resume</a>
+            <a href="/resume.pdf" download class="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600">Download Resume</a>
           </div>
         </div>
 
@@ -1849,7 +1849,7 @@
                 <span class="tech-badge">Tailwind</span>
                 <span class="tech-badge">JavaScript</span>
                 <span class="tech-badge">Python</span>
-                <span class="tech-badge">Django</span>           
+                <span class="tech-badge">Django</span>
               </div>
 
               <div class="project-buttons">
