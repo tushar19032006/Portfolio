@@ -17,3 +17,6 @@ __pycache__/
 
 # Optional: old SQLite file
 db.sqlite3
+
+*.log
+.DS_Store
