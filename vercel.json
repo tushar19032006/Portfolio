@@ -8,7 +8,12 @@
   ],
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "/profile.jpg",
+      "dest": "/website/static/profile.jpg"
+    },
+    {
+      "src": "/resume.pdf",
+      "dest": "/website/static/resume.pdf"
     },
     {
       "src": "/(.*)",
