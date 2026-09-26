@@ -28,15 +28,4 @@ def home(request):
         "projects": projects
     })
 
-def download_resume(request):
-    resume_path = finders.find("resume.pdf")
 
-    if not resume_path:
-        raise Http404("Resume file not found")
-
-    return FileResponse(
-        open(resume_path, "rb"),
-        as_attachment=True,
-        filename="Tushar_Resume.pdf"
-    )
-    
