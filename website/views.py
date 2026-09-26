@@ -21,6 +21,13 @@ def home(request):
 
         return redirect("home")
     
+    # Show all projects on the homepage
+    projects = Project.objects.all()
+
+    return render(request, "home.html", {
+        "projects": projects
+    })
+
 def download_resume(request):
     resume_path = finders.find("resume.pdf")
 
@@ -32,9 +39,4 @@ def download_resume(request):
         as_attachment=True,
         filename="Tushar_Resume.pdf"
     )
-    # Show all projects on the homepage
-    projects = Project.objects.all()
-
-    return render(request, "home.html", {
-        "projects": projects
-    })
+    
