@@ -7,25 +7,25 @@ from django.contrib.staticfiles import finders
 from django.conf import settings
 import os
 
+from pymongo.errors import PyMongoError
+from django.contrib import messages
+
 def home(request):
-    # When the contact form is submitted
     if request.method == "POST":
-        contacts.insert_one(
-            {
+        try:
+            contacts.insert_one({
                 "name": request.POST.get("name"),
                 "email": request.POST.get("email"),
                 "subject": request.POST.get("subject"),
                 "message": request.POST.get("message"),
-            }
-        )
+            })
+            messages.success(request, "Message sent successfully!")
+        except PyMongoError as e:
+            print("MongoDB Error:", e)
+            messages.error(request, "Unable to send message right now.")
 
         return redirect("home")
-    
-    # Show all projects on the homepage
+
     projects = Project.objects.all()
-
-    return render(request, "home.html", {
-        "projects": projects
-    })
-
+    return render(request, "home.html", {"projects": projects})
 
