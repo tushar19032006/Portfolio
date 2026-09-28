@@ -20,8 +20,9 @@ def home(request):
                 "message": request.POST.get("message"),
             })
             messages.success(request, "Message sent successfully!")
-        except PyMongoError as e:
-            print("MongoDB Error:", e)
+            
+        except Exception as e:
+            print("FULL MONGODB ERROR:", repr(e))
             messages.error(request, "Unable to send message right now.")
 
         return redirect("home")

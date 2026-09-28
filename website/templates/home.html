@@ -1938,6 +1938,17 @@
           </div>
 
           <div class="contact-right">
+
+            {% if messages %}
+              {% for message in messages %}
+                <div style="padding:12px;margin-bottom:15px;border-radius:10px;
+                  background:{% if message.tags == 'success' %}#dcfce7{% else %}#fee2e2{% endif %};
+                  color:{% if message.tags == 'success' %}#166534{% else %}#991b1b{% endif %};">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+
             <form method="POST">
               {% csrf_token %}
 
